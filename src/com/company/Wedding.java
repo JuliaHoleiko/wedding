@@ -16,7 +16,6 @@ public class Wedding {
                 this.person2 = person2;
             }
         }
-
         static class Graph {
             ArrayList<Pair> allPairs = new ArrayList<>();
             HashMap<Integer, Integer> mapOfPersons = new HashMap<>();

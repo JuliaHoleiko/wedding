@@ -1,19 +1,22 @@
 
 package com.company;
 
+
+import java.io.*;
+import java.util.ArrayList;
+
 public class Main {
 
-
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        WorkWithFile wr = new WorkWithFile();
+        ArrayList arr  = wr.readFile();
+        int size = (int) arr.get(0);
+        System.out.println(size);
 
         Wedding.Graph graph = new Wedding.Graph();
-        graph.addPair(1, 2);
-        graph.addPair(2, 4);
-        graph.addPair(1, 3);
-        graph.addPair(3, 5);
-        graph.addPair(8, 10);
-
+        for(int i = 1; i < size*2; i=i+2){
+            graph.addPair((Integer) arr.get(i), (Integer) arr.get(i+1));
+        }
         graph.findPairs();
     }
 }
